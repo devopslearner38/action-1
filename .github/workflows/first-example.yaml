@@ -15,6 +15,6 @@ jobs:
             - name: List Files
               run: ls
 
-            - name: Reaf File
+            - name: Read File
               run: cat README.md
 
