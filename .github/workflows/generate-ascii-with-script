@@ -1,4 +1,4 @@
-name: Generate ASCII Artwork With Script
+name: Generate ASCII Artwork with Shell Script
 
 on: push
 
@@ -9,12 +9,18 @@ jobs:
             - name: Checkout Repo
               uses: actions/checkout@v4
 
+            - name: Install Vowsay Program
+              run: sudo apt-get install cowsay -y
+
+            - name: Execute Cowsay CMD
+              run: cowsay -f dragon "Run for cover, I am a dragon" >> dragon.txt
+
+            - name: Test File Exists
+              run: grep -i "dragon" dragon.txt
+              
+            - name: Read Files
+              run: cat dragon.txt
+
             - name: List Repo Files
-              run: ls -ltra
-
-            - name: Execute Shell Script
-              run: ./ascii-script.sh
-
-
-
+              run: ls -la
 
