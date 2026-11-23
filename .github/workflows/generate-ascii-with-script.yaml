@@ -17,5 +17,11 @@ jobs:
                 chmod +x ascii-script.sh
                 ./ascii-script.sh
 
+            - name: Upload Dragon Artwork Artifact   
+              uses: actions/upload-artifact@v4
+              with:
+                name: dragon-artwork
+                path: dragon.txt
+
 
 
